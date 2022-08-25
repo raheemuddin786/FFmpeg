@@ -3661,6 +3661,10 @@ int main(int argc, char **argv)
     VideoState *is;
 
     init_dynload();
+    char *foo[2] = {argv[0], "srt://hsg.demo.haivision.com:5175"};
+    argc=2;
+    argv=foo;
+    printf("Arguments: %s, %s ",argv[0]  ,argv[1]);
 
     av_log_set_flags(AV_LOG_SKIP_REPEATED);
     parse_loglevel(argc, argv, options);
